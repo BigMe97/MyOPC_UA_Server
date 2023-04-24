@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CONFIG>
+  <address>opc.tcp://localhost:4840</address>
+  <item name="temperature" type="double"></item>
+  <item name="output" type="int"></item>
+  <item name="alarm" type="string"></item>
+</CONFIG>

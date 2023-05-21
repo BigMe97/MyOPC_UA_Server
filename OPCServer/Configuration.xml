@@ -3,5 +3,5 @@
   <address>opc.tcp://localhost:4840</address>
   <item name="temperature" type="double"></item>
   <item name="output" type="int"></item>
-  <item name="alarm" type="string"></item>
+  <item name="fan_speed" type="int"></item>
 </CONFIG>

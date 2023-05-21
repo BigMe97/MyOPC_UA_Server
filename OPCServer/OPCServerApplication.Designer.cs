@@ -36,7 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtURL = new System.Windows.Forms.TextBox();
             this.btnStartStop = new System.Windows.Forms.Button();
-            this.txtValidate = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbVariables
@@ -88,7 +87,7 @@
             // 
             // btnStartStop
             // 
-            this.btnStartStop.BackColor = System.Drawing.Color.Green;
+            this.btnStartStop.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btnStartStop.Location = new System.Drawing.Point(207, 250);
             this.btnStartStop.Name = "btnStartStop";
             this.btnStartStop.Size = new System.Drawing.Size(120, 62);
@@ -97,19 +96,11 @@
             this.btnStartStop.UseVisualStyleBackColor = false;
             this.btnStartStop.Click += new System.EventHandler(this.btnStartStop_Click);
             // 
-            // txtValidate
-            // 
-            this.txtValidate.Location = new System.Drawing.Point(57, 249);
-            this.txtValidate.Name = "txtValidate";
-            this.txtValidate.Size = new System.Drawing.Size(129, 20);
-            this.txtValidate.TabIndex = 6;
-            // 
             // OPCServerApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(391, 380);
-            this.Controls.Add(this.txtValidate);
             this.Controls.Add(this.btnStartStop);
             this.Controls.Add(this.txtURL);
             this.Controls.Add(this.label2);
@@ -133,7 +124,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtURL;
         private System.Windows.Forms.Button btnStartStop;
-        private System.Windows.Forms.TextBox txtValidate;
     }
 }
 

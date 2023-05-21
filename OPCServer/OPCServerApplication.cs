@@ -55,7 +55,6 @@ namespace OPCServer
                         string name = reader.GetAttribute("name");
                         string typ = reader.GetAttribute("type");
                         lbVariables.Items.Add(name);
-                        txtValidate.Text = typ;
                         if (typ == "double")
                         {
                             nodes.Add(new OpcDataVariableNode<double>(name));
@@ -91,26 +90,41 @@ namespace OPCServer
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            if (btnStartStop.Text == "Start")
+            try
             {
-                lbValues.Items.Clear();
-            }
-            else
-            {
-                var client = new OpcClient(address);
-                client.Connect();
-                lbValues.Items.Clear();
-                foreach (var item in lbVariables.Items)
+                if (btnStartStop.Text == "Start")
                 {
-                    lbValues.Items.Add(client.ReadNode(String.Format("ns=2;s={0}", item.ToString())));
+                    lbValues.Items.Clear();
                 }
-                client.Disconnect();
+                else
+                {
+                    var client = new OpcClient(address);
+                    client.Connect();
+                    lbValues.Items.Clear();
+                    foreach (var item in lbVariables.Items)
+                    {
+                        lbValues.Items.Add(client.ReadNode(String.Format("ns=2;s={0}", item.ToString())));
+                    }
+                    client.Disconnect();
+                }
             }
+            catch (Exception)
+            {
+                btnStartStop.BackColor = Color.Gray;
+                btnStartStop.Text = "Error";
+            }
+            
         }
 
         private void OPCServerApplication_FormClosing(object sender, FormClosingEventArgs e)
         {
-            server.Stop();
+            try
+            {
+                server.Stop();
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void btnStartStop_Click(object sender, EventArgs e)
